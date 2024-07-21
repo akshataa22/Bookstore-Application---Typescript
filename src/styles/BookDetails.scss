@@ -1,0 +1,164 @@
+.container {
+  width: 100%;
+}
+
+.detailscontainer {
+  display: flex;
+  padding: 5%;
+  gap: 20px;
+}
+
+.leftdetailsContainer {
+  flex: 0 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+}
+
+.rightsidedetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bookdetailspara,
+.customerFeedback {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+}
+
+.miniImg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.miniImg img {
+  width: 50px;
+  height: auto;
+}
+
+.frontPageSection {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.frontPage {
+  width: 202%;
+  height: auto;
+  border: 1px solid;
+  padding: 27%;
+}
+
+.frontPage img {
+  width: 100%;
+  height: auto;
+}
+
+.frontpagebtn {
+  display: flex;
+
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.frontpagebtn button {
+  padding: 10px;
+  border: none;
+  background-color: #a03037;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.frontpagebtn .wishlist {
+  background-color: rgb(60, 59, 59);
+}
+
+.detailpgbookName {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.detailpgbookAuthor {
+  font-size: 18px;
+  color: gray;
+}
+
+.detailpgbookRate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detailpgbookRating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 5%;
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  font-size: smaller;
+  padding: 0.5%;
+}
+
+.detailpgbookCount {
+  font-size: 14px;
+  color: gray;
+}
+
+.detailpgbookPrice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.detailpgofferPrice {
+  font-size: x-large;
+  color: black;
+  font-weight: bold;
+}
+
+.detailpgoriginalPrice {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.bookdetailspara span {
+  margin-bottom: 10px;
+  color: gray;
+}
+.bookdetailspara p {
+  font-size: smaller;
+}
+
+.customerFeedback h3 {
+  margin-bottom: 10px;
+}
+
+.customerFeedback h4 {
+  margin-bottom: 10px;
+}
+
+.customerFeedback .starIcon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.customerFeedback input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

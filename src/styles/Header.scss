@@ -1,0 +1,124 @@
+.header {
+    width: 100vw;
+  }
+  
+  .headercontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    padding: 10px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: end;
+  }
+  
+  .logo {
+    width: 40%;
+    margin-right: 15%;
+  }
+  
+  .logoText {
+    font-size: medium;
+    font-family: sans-serif;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    width: 41%;
+
+    .search-input {
+      outline: none;
+      width: 60%;
+      padding: 10px 10px 10px 40px; // Adjust padding to make space for the image
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #search {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px; // Adjust size as needed
+      height: 20px; // Adjust size as needed
+    }
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    width: 16%;
+    justify-content: space-evenly;
+  }
+  
+  .spacer{
+    width: 10%;
+  }
+  
+  .user-card {
+    position: absolute;
+    top: 8%;
+    right: 19%;
+    width: 13%;
+    height: 25%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 1%;
+    padding-bottom: .3%;
+    border-radius: 5px;
+    font-size: small;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .user-info{
+      margin-top: -7%;
+    }
+  }
+  
+  .user-card .user-info {
+    margin-bottom: 10px;
+    font-size: small;
+  }
+  .optionName{
+    font-size: small;
+    margin-left: 2%;
+  }
+  .user-card .username {
+    font-weight: 560;
+  }
+
+  .cartOptions{
+    display: flex;
+    flex-direction: column;
+    .logoutbtn{
+      border: 1px solid brown;
+      width: 60%;
+      display: flex;
+      /* align-items: center; */
+      justify-content: center;
+    }
+  }
+  
+  .user-card button {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: gray;
+    align-items: center;
+    justify-content: flex-start;
+
+   
+  }
+  
+  
