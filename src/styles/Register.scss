@@ -1,0 +1,68 @@
+
+.register-form {
+    width: 80%;
+
+    label {
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    input {
+        width: 100%;
+        height: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .password-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 0;
+        width: 100%; 
+    }
+    
+    .password-container input {
+        flex: 1;
+        width: calc(100% - 40px);
+        width: 188px;
+    }
+    
+    
+    .password-toggle {
+        position: absolute;
+        right: 0;
+        top: 38%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0 0.5rem;
+        color: #555;
+        z-index: 2;
+    }
+
+    .register {
+        width: 107%;
+        height: 48px;
+        padding: 10px;
+        background-color: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .register-form{
+        width: 92%;
+    }
+    .pages {
+        margin-bottom: 10px;
+    }
+}

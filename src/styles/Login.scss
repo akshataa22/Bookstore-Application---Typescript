@@ -1,0 +1,152 @@
+.auth-form {
+    width: 80%;
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        height: 25px;
+        padding: 6px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .password-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .password-container input {
+        width: 100%;
+        padding-right: 2.5rem;
+    }
+    
+    .password-toggle {
+        position: absolute;
+        right: 0;
+        top: 38%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0 0.5rem;
+        color: #555;
+    }
+
+    .forgot-password {
+        width: 107%;
+        text-align: right;
+        margin-bottom: 20px;
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+
+    .login {
+        width: 107%;
+        height: 50px;
+        padding: 10px;
+        background-color: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .alternative-login {
+        text-align: center;
+        margin-top: 20px;
+        width: 107%;
+
+        span {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            gap: 10%;
+        }
+
+        .left-button, .right-button {
+            width: 98%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            
+        }
+
+        .left-button {
+            background-color: #3b5998;
+            color: #fff;
+            font-size: 16px;
+        }
+        .right-button {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .auth-form {
+    width: 88%;
+}
+}
+
+@media screen and (min-width: 431px) and (max-width: 768px) {
+  .auth-form {
+    width: 96%;
+}
+.auth-form .alternative-login span {
+  margin-bottom: 12px;
+}
+.auth-form .login {
+  width: 104%;
+}
+  }
+  
+  @media (min-width: 381px) and (max-width: 430px) {
+    .auth-form {
+      width: 92%;
+  }
+  .auth-form .alternative-login span {
+    margin-bottom: 14px;
+  }
+  }
+  
+  @media (min-width: 321px) and (max-width: 380px) {
+    .auth-page-container .auth-page-form {
+    width: 65%;
+    }
+    .auth-form {
+      width: 96%;
+  }
+  .auth-form .alternative-login span {
+    margin-bottom: 12px;
+  }
+  }
+  
+  @media (max-width: 320px) {
+    .auth-form {
+      width: 100%;
+    }
+    .auth-form .alternative-login span {
+      margin-bottom: 10px;
+    }
+  }
