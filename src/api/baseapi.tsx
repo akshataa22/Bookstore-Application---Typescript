@@ -1,3 +1,3 @@
-const base_url = 'https://bookstore.incubation.bridgelabz.com/bookstore_app/';
+const base_url = 'https://bookstore.incubation.bridgelabz.com';
 
 export default base_url;

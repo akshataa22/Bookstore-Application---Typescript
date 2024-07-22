@@ -6,8 +6,8 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Layout from '../components/Layout'
 import Cart from '../components/Cart'
-import BookCard from '../components/BookCard';
 import BookDetails from '../components/BookDetails';
+import Dashboard from '../pages/Dashboard';
 
 const AppRouter = () => {
     return (
@@ -18,10 +18,10 @@ const AppRouter = () => {
             <Route path="/login" element={<AuthRoute><Login /></AuthRoute>} />
             <Route path="/register" element ={<AuthRoute><Register /></AuthRoute>} />
           </Route>
-          <Route path="/" element={<Layout />}>
-            <Route path="/details" element={<BookDetails/>} />
-            <Route path="/card" element={<BookCard/>} />
-            <Route path="/cart" element={<Cart/>} />
+          <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+            <Route path="/home" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/details" element={<ProtectedRoute><BookDetails/></ProtectedRoute>} />
+            <Route path="/cart" element={<ProtectedRoute><Cart/></ProtectedRoute>} />
           </Route>
                
       </Routes>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import base_url from "../api/baseapi";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import logo from "./../assets/images/logo.png";
@@ -11,6 +13,7 @@ import search from '../assets/images/search.png'
 const Header = () => {
   const [showUserCard, setShowUserCard] = useState(false);
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const toggleUserCard = () => {
     setShowUserCard((prevState) => !prevState);
@@ -19,6 +22,17 @@ const Header = () => {
   const handleCartClick = () => {
     navigate('/cart'); 
   };
+
+  const handleHomeClick = () => {
+    navigate('/card'); 
+  };
+
+  const handleLogout = async () => {
+        localStorage.removeItem("token");
+        navigate("/");
+        console.log("Logout successful");
+  };
+
 
   return (
     <header className="header">
@@ -29,6 +43,7 @@ const Header = () => {
             style={{ backgroundColor: "red" }}
             alt="bookLogo"
             className="logo"
+            onClick={handleHomeClick}
           />
         </div>
         <div className="search-container">
@@ -63,7 +78,7 @@ const Header = () => {
                   <FavoriteBorderOutlinedIcon fontSize="small" />{" "}
                   <span style={{ marginLeft: "2%" }}>My Wishlist</span>
                 </button>
-                <button className="logoutbtn"> Logout</button>
+                <button type="button" onClick={handleLogout} className="logoutbtn"> Logout</button>
               </div>
 
             </div>

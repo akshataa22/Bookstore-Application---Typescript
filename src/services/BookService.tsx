@@ -1,11 +1,30 @@
-// services/BookService.ts
-export const getCartItems = async (): Promise<any[]> => {
-    // Replace with your actual API call
-    return fetch('/api/cart-items')
-      .then(response => response.json())
-      .catch(error => {
-        console.error('Error fetching cart items:', error);
-        return [];
-      });
-  };
-  
+import axios from "axios";
+import base_url from './../api/baseapi';
+
+export interface Book {
+  _id: string;
+  description: string;
+  discountPrice: number;
+  bookName: string;
+  author: string;
+  quantity: number;
+  price: number;
+}
+
+interface ApiResponse<T> {
+  result: T;
+}
+
+const BookService = {
+
+  getCartItems: async (token:string): Promise<ApiResponse<Book[]>> => {
+    const response = await axios.get(`${base_url}/bookstore_user/get/book`, {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    return response.data;
+  }
+}  
+
+export default BookService;
