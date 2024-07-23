@@ -12,7 +12,7 @@ const AuthRoute: React.FC<AuthRouteProps> = ({ children }) => {
     return <>{children}</>;
   }
 
-  return <Navigate to="/dashboard" replace />
+  return <Navigate to="/home" replace />
 };
 
 export default AuthRoute;

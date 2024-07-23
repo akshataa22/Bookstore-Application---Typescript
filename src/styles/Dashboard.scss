@@ -1,8 +1,33 @@
-.dashboard-container{
-    overflow-y: auto;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 6%;
+h6 {
+  padding-left: 15%;
+  font-size: 26px;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 0;
+  font-weight: 500;
+
+  span {
+    font-size: 12px;
+    color: #888;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.above-dashboard {
+  overflow: auto;
+}
+
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5%;
+  padding-top: 1%;
+  box-sizing: border-box;
 }

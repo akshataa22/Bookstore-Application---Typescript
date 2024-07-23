@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wishlist-container {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .wishlist-item {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #e0e0e0;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      &__image {
+        flex-shrink: 0;
+        width: 100px;
+        height: 150px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      &__details {
+        flex-grow: 1;
+        margin-left: 20px;
+  
+        h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          font-size: 16px;
+          margin: 5px 0;
+  
+          &.price {
+            color: #f00;
+  
+            .original-price {
+              text-decoration: line-through;
+              color: #888;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+  
+      &__actions {
+        flex-shrink: 0;
+        button {
+          background: none;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+}

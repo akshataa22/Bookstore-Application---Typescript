@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import base_url from "../api/baseapi";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import logo from "./../assets/images/logo.png";
@@ -13,7 +11,6 @@ import search from '../assets/images/search.png'
 const Header = () => {
   const [showUserCard, setShowUserCard] = useState(false);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   const toggleUserCard = () => {
     setShowUserCard((prevState) => !prevState);
@@ -24,8 +21,13 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    navigate('/card'); 
+    navigate('/home'); 
   };
+
+  const handleWishlistClick = () => {
+    navigate('/wishlist'); 
+  };
+
 
   const handleLogout = async () => {
         localStorage.removeItem("token");
@@ -74,7 +76,7 @@ const Header = () => {
                   <ShoppingBagOutlinedIcon fontSize="small" />{" "}
                   <span style={{ marginLeft: "2%" }}>My Orders</span>
                 </button>
-                <button>
+                <button onClick={handleWishlistClick}>
                   <FavoriteBorderOutlinedIcon fontSize="small" />{" "}
                   <span style={{ marginLeft: "2%" }}>My Wishlist</span>
                 </button>

@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import Cart from '../components/Cart'
 import BookDetails from '../components/BookDetails';
 import Dashboard from '../pages/Dashboard';
+import Wishlist from '../components/Wishlist';
 
 const AppRouter = () => {
     return (
@@ -20,7 +21,8 @@ const AppRouter = () => {
           </Route>
           <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
             <Route path="/home" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/details" element={<ProtectedRoute><BookDetails/></ProtectedRoute>} />
+            <Route path="/details/:id" element={<ProtectedRoute><BookDetails/></ProtectedRoute>} />
+            <Route path='/wishlist' element={<ProtectedRoute><Wishlist /></ProtectedRoute>}/>
             <Route path="/cart" element={<ProtectedRoute><Cart/></ProtectedRoute>} />
           </Route>
                

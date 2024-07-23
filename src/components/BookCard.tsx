@@ -2,14 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import "./../styles/BookCard.scss";
 import StarIcon from '@mui/icons-material/Star';
 import { Book } from "../services/BookService";
-import book1 from './../assets/images/book1.jpg'
+import book1 from './../assets/images/book1.jpg';
 import book2 from './../assets/images/book2.jpg';
 import book3 from './../assets/images/book3.jpg';
 import book4 from './../assets/images/book4.jpg';
 import book5 from './../assets/images/book5.png';
 import book6 from './../assets/images/book6.jpg';
 import book7 from './../assets/images/book7.jpg';
-
 
 interface BookCardProps {
     book: Book;
@@ -21,17 +20,27 @@ const bookImageMapping: { [key: string]: string } = {
     "Fear Not Strong": book4,
     "The lord of the Rings": book5,
     "Iron Man: Extremis": book2,
-    "Spider Man" : book6,
-    "Group Discussion" : book1,
-    "The Hobbit 2" : book7,
+    "Spider Man": book6,
+    "Group Discussion": book1,
+    "The Hobbit 2": book7,
+    "The Hobbit 9": book2,
+    "The Hobbit 78": book3,
+    "The Hobbit 56": book4,
+    "Unbranded Cotton Hat": book5,
+    "Unbranded Concrete Table": book2,
+    "Generic Wooden Chair": book6,
+    "Refined Wooden Cheese": book1,
+    "Incredible Plastic Table": book7,
+    "Just Things By Nilesh": book4,
+    "ghfghfg": book6
 };
-
 
 function BookCard({ book }: BookCardProps) {
     const navigate = useNavigate();
 
     const handleCardClick = () => {
-        navigate('/details');
+        const bookImage = bookImageMapping[book.bookName] || 'book-cover.jpg';
+        navigate(`/details/${book._id}`, { state: { book, bookImage } });
     };
 
     const bookImage = bookImageMapping[book.bookName] || 'book-cover.jpg';
@@ -39,7 +48,7 @@ function BookCard({ book }: BookCardProps) {
     return (
         <div className="bookCard" onClick={handleCardClick}>
             <div className="imgSection">
-            <img src={bookImage} alt="Book Cover" />
+                <img src={bookImage} alt="Book Cover" />
             </div>
             <div className='bookInformation'>
                 <div className='bookName'>{book.bookName}</div>

@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
 import BookService,{Book} from "../services/BookService";
 import '../styles/Dashboard.scss'
@@ -12,7 +12,7 @@ function Dashboard() {
       }, [token]);
 
     const fetchBooks = async () => {
-        const response = await BookService.getCartItems(token);
+        const response = await BookService.getBooks(token);
         const data: Book[] = Array.isArray(response.result)
           ? response.result
           : [];
@@ -20,11 +20,18 @@ function Dashboard() {
       };
 
   return (
-    <div className="dashboard-container">
+    <>
+    <div className="above-dashboard">
+      <h6>Books <span>(128items)</span></h6> 
+     <div className="dashboard-container">
+      
       {books.map(book => (
         <BookCard key={book._id} book={book} />
       ))}
     </div>
+    </div>
+    </>
+
   );
 }
 
