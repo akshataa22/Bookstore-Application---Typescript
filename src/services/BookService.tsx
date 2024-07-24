@@ -55,10 +55,9 @@ const BookService = {
   },
 
   addToWishlist: async (token: string, product_id: string): Promise<ApiResponse<WishlistItem>> => {
-    debugger
     const response = await axios.post(`${base_url}/bookstore_user/add_wishlist_item/${product_id}`, {}, {
       headers: {
-        Accept: 'application/json',
+        'Content-type': 'application/json',
        'x-access-token': `${token}`,
       },
     });

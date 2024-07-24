@@ -3,6 +3,7 @@ import '../styles/Cart.scss';
 import location from '../assets/images/location-logo.png';
 import book1 from '../assets/images/book1.jpg';
 import BookService, { CartItem } from '../services/BookService';
+import { Link } from "react-router-dom";
 
 function Cart() {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -56,6 +57,9 @@ function Cart() {
 
     return (
         <div className="cart-container">
+            <div className="breadcrumb">
+        <Link to="/home">Home</Link> / Book(01)
+      </div>
             <div className="cart-details">
                 <div className="head">
                     <h3>My cart ({cartItems.length})</h3>
@@ -130,9 +134,13 @@ function Cart() {
                                         <h4>{item.product_id.bookName}</h4>
                                         <span>by {item.product_id.author}</span>
                                         <p className="price">Rs. {item.product_id.discountPrice} <span className="original-price">Rs. {item.product_id.price}</span></p>
+                                      
                                     </div>
+                                   
                                 </div>
+                                 
                             ))}
+                              <div className="spacer"></div>
                             <button className="checkout">CHECKOUT</button>
                         </div>
                     </div>

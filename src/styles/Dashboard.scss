@@ -1,9 +1,19 @@
-h6 {
-  padding-left: 15%;
+html,body {
+  height: auto; /* Change fixed height to auto */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.book {
+  margin-left: 13%;
+}
+
+h6 {  
   font-size: 26px;
   margin: 0;
-  margin-top: 2%;
-  margin-bottom: 0;
+  // margin-top: 2%;
+  margin-left: 2.8%;
   font-weight: 500;
 
   span {
@@ -12,22 +22,48 @@ h6 {
   }
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.dashboard-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .above-dashboard {
-  overflow: auto;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: calc(100vh - 100px); 
+  overflow-y: auto; 
 }
 
 .dashboard-container {
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 5%;
-  padding-top: 1%;
+  padding-top: .2%;
   box-sizing: border-box;
+  padding-bottom: .8%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+
+  .page-item {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .page-item.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
 }

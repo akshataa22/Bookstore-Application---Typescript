@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import '../styles/BookDetails.scss';
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import BookService from "../services/BookService";
+import { Link } from "react-router-dom";  
 
 function BookDetails() {
   const location = useLocation();
@@ -31,7 +32,7 @@ function BookDetails() {
     
   return (
     <div className="book-details">
-      <div className="breadcrumb">Home / Book(01)</div>
+      <div className="breadcrumb"><Link to="/home">Home</Link> / Book(01)</div>
       <div className="content">
         <div className="image-gallery">
           <img src={bookImage} alt="Book Cover" className="thumbnail" />
@@ -55,7 +56,7 @@ function BookDetails() {
               4.5
               <StarBorderIcon fontSize="small" />
             </div>
-            <span>(20)</span>
+            <span className="count">(20)</span>
           </div>
           <div className="price">
             <span className="current-price">Rs.{book.discountPrice}</span>
@@ -69,18 +70,70 @@ function BookDetails() {
             <span>Customer Feedback</span>
             <div className="overall-rating">
               <span>Overall rating</span>
-              <div className="stars">☆☆☆☆☆</div>
-              <textarea placeholder="Write your review"></textarea>
-              <button>Submit</button>
-            </div>
-            <div className="review">
-              <div className="reviewer">AC</div>
-              <div className="review-content">
-                <div className="review-name">Akshata Dhanwade</div>
-                <div className="review-stars">★★★★☆</div>
+              <div>
+              <StarBorderIcon className="starIcons" />
+              <StarBorderIcon className="starIcons" />
+              <StarBorderIcon className="starIcons" />
+              <StarBorderIcon className="starIcons" />
+              <StarBorderIcon className="starIcons" />
+              </div>
+              <div className='contains'>
+                <textarea placeholder="Write your review"></textarea>
+                <button>Submit</button>
               </div>
             </div>
+            </div>
+            <div className="review">
+            <div className="review-content">
+              <div className="review1">Dipti Borke</div>
+              <StarBorderIcon
+                className="starIconss"
+                style={{ color: "yellow" }}
+              />
+              <StarBorderIcon
+                className="starIconss"
+                style={{ color: "yellow" }}
+              />
+              <StarBorderIcon
+                className="starIconss"
+                style={{ color: "yellow" }}
+              />
+              <StarBorderIcon className="starIconss" />
+              <StarBorderIcon className="starIconss" />
+              <p className="reviewcomment">
+                Stephen Chbosky’s coming-of-age novel offers a poignant
+                exploration of identity, mental health, and acceptance. Through
+                the eyes of the protagonist, Charlie,
+              </p>
+            </div>
+
+            <div className="review2">Akshata Dhanwade</div>
+            <StarBorderIcon
+              className="starIconss"
+              style={{ color: "yellow" }}
+            />
+            <StarBorderIcon
+              className="starIconss"
+              style={{ color: "yellow" }}
+            />
+            <StarBorderIcon
+              className="starIconss"
+              style={{ color: "yellow" }}
+            />
+            <StarBorderIcon
+              className="starIconss"
+              style={{ color: "yellow" }}
+            />
+            <StarBorderIcon className="starIconss" />
+            <p className="reviewcomment">
+              Michio Kaku’s exploration of seemingly impossible technologies
+              offers a fascinating glimpse into the future of science. Through
+              accessible prose and engaging examples.
+            </p>
           </div>
+
+          <div className="spacer"></div>
+         
         </div>
       </div>
     </div>

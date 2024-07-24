@@ -93,3 +93,21 @@
     display: flex;
 
 }
+
+@media (min-width: 381px) and (max-width: 430px) {
+    .bookCard {
+        width: 38%;
+    }
+  }
+  
+  @media (min-width: 321px) and (max-width: 380px) {
+    .bookCard {
+        width: 37%;
+    } 
+  }
+  
+  @media (max-width: 320px) {
+    .bookCard {
+        width: 63%;
+    }
+  }

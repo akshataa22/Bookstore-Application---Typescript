@@ -11,14 +11,10 @@ function Wishlist() {
     }, [token]);
 
     const fetchWishlist = async () => {
-        try {
             const response = await BookService.getWishlistItems(token);
             const data: WishlistItem[] = Array.isArray(response.result) ? response.result : [];
             const books: Book[] = data.map(item => item.product_id);
             setWishlist(books);
-        } catch (error) {
-            console.error("Failed to fetch wishlist", error);
-        }
     };
 
     return (
