@@ -17,15 +17,22 @@ function Wishlist() {
             setWishlist(books);
     };
 
+    const handleRemoveItem = async (productId: string) => {
+        try {
+            await BookService.removeWishlistItem(token, productId);
+            setWishlist(wishlist.filter(book => book._id !== productId));
+        } catch (error) {
+            console.error("Error removing item from wishlist", error);
+        }
+    };
+
+
     return (
         <div className="wishlist-container">
             {wishlist.map(book => (
                 <div key={book._id} className="wishlist-item">
                     <div className="wishlist-item__image">
-                        <img
-                            src={book.bookImage ? `path/to/images/${book.bookImage}` : 'path/to/placeholder.png'}
-                            alt={book.bookName}
-                        />
+                    <img src={book.bookImage || "./../assets/images/book1.jpg"} alt={book.bookName} />
                     </div>
                     <div className="wishlist-item__details">
                         <h3>{book.bookName}</h3>
@@ -35,7 +42,7 @@ function Wishlist() {
                         </p>
                     </div>
                     <div className="wishlist-item__actions">
-                        <button>🗑</button>
+                        <button onClick={() => handleRemoveItem(book._id)}>🗑</button>
                     </div>
                 </div>
             ))}

@@ -55,13 +55,21 @@ const BookService = {
   },
 
   addToWishlist: async (token: string, product_id: string): Promise<ApiResponse<WishlistItem>> => {
-    const response = await axios.post(`${base_url}/bookstore_user/add_wishlist_item/${product_id}`, {}, {
+    const response = await axios.post(`${base_url}/bookstore_user/add_wish_list/${product_id}`, {}, {
       headers: {
-        'Content-type': 'application/json',
        'x-access-token': `${token}`,
       },
     });
     console.log(response);
+    return response.data;
+  },
+
+  removeWishlistItem: async (token: string, _id: string): Promise<ApiResponse<WishlistItem>> => {
+    const response = await axios.delete(`${base_url}/bookstore_user/remove_wishlist_item/${_id}`, {
+      headers: {
+        'x-access-token': `${token}`,
+      },
+    });
     return response.data;
   },
 
